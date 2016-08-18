@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ZapImoveisTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2CA7C45C1D6668060033C58B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2CA7C4701D6668070033C58B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2CA7C47B1D6668070033C58B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
