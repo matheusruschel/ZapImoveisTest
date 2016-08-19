@@ -17,6 +17,16 @@
 		2CA7C4951D6668E80033C58B /* RealStateTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4931D6668E80033C58B /* RealStateTableTableViewCell.swift */; };
 		2CA7C4961D6668E80033C58B /* RealStateTableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7C4941D6668E80033C58B /* RealStateTableTableViewCell.xib */; };
 		2CA7C4991D6679A40033C58B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */; };
+		2CA7C49B1D67462A0033C58B /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C49A1D67462A0033C58B /* ConnectionSettings.swift */; };
+		2CA7C49D1D6746640033C58B /* CommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C49C1D6746640033C58B /* CommunicationModel.swift */; };
+		2CA7C49F1D6746EE0033C58B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C49E1D6746EE0033C58B /* Error.swift */; };
+		2CA7C4A21D6748930033C58B /* Wrappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4A11D6748930033C58B /* Wrappable.swift */; };
+		2CA7C4A41D6748AF0033C58B /* Imovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4A31D6748AF0033C58B /* Imovel.swift */; };
+		2CA7C4A61D674BC60033C58B /* Foto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4A51D674BC60033C58B /* Foto.swift */; };
+		2CA7C4A81D674CB40033C58B /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4A71D674CB40033C58B /* Estado.swift */; };
+		2CA7C4AA1D674FE80033C58B /* RealStateCommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4A91D674FE80033C58B /* RealStateCommunicationModel.swift */; };
+		2CA7C4AC1D6751BB0033C58B /* Imoveis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4AB1D6751BB0033C58B /* Imoveis.swift */; };
+		2CA7C4AE1D6752270033C58B /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4AD1D6752270033C58B /* ResponseStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,16 @@
 		2CA7C4931D6668E80033C58B /* RealStateTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealStateTableTableViewCell.swift; sourceTree = "<group>"; };
 		2CA7C4941D6668E80033C58B /* RealStateTableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealStateTableTableViewCell.xib; sourceTree = "<group>"; };
 		2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		2CA7C49A1D67462A0033C58B /* ConnectionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
+		2CA7C49C1D6746640033C58B /* CommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationModel.swift; sourceTree = "<group>"; };
+		2CA7C49E1D6746EE0033C58B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		2CA7C4A11D6748930033C58B /* Wrappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrappable.swift; sourceTree = "<group>"; };
+		2CA7C4A31D6748AF0033C58B /* Imovel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imovel.swift; sourceTree = "<group>"; };
+		2CA7C4A51D674BC60033C58B /* Foto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foto.swift; sourceTree = "<group>"; };
+		2CA7C4A71D674CB40033C58B /* Estado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estado.swift; sourceTree = "<group>"; };
+		2CA7C4A91D674FE80033C58B /* RealStateCommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealStateCommunicationModel.swift; sourceTree = "<group>"; };
+		2CA7C4AB1D6751BB0033C58B /* Imoveis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imoveis.swift; sourceTree = "<group>"; };
+		2CA7C4AD1D6752270033C58B /* ResponseStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +123,7 @@
 		2CA7C45F1D6668060033C58B /* ZapImoveisTest */ = {
 			isa = PBXGroup;
 			children = (
+				2CA7C4A01D6748840033C58B /* Protocol */,
 				2CA7C4971D6679950033C58B /* Util */,
 				2CA7C4921D6668C90033C58B /* Cells */,
 				2CA7C48F1D6668110033C58B /* ViewController */,
@@ -137,6 +158,13 @@
 		2CA7C48E1D66680C0033C58B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CA7C4B01D67545B0033C58B /* Error */,
+				2CA7C4AF1D6754490033C58B /* Communication */,
+				2CA7C4A31D6748AF0033C58B /* Imovel.swift */,
+				2CA7C4A51D674BC60033C58B /* Foto.swift */,
+				2CA7C4A71D674CB40033C58B /* Estado.swift */,
+				2CA7C4AB1D6751BB0033C58B /* Imoveis.swift */,
+				2CA7C4AD1D6752270033C58B /* ResponseStatus.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,6 +192,32 @@
 				2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		2CA7C4A01D6748840033C58B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7C4A11D6748930033C58B /* Wrappable.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		2CA7C4AF1D6754490033C58B /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7C49A1D67462A0033C58B /* ConnectionSettings.swift */,
+				2CA7C4A91D674FE80033C58B /* RealStateCommunicationModel.swift */,
+				2CA7C49C1D6746640033C58B /* CommunicationModel.swift */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
+		2CA7C4B01D67545B0033C58B /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7C49E1D6746EE0033C58B /* Error.swift */,
+			);
+			name = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,10 +352,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA7C4AE1D6752270033C58B /* ResponseStatus.swift in Sources */,
+				2CA7C4AA1D674FE80033C58B /* RealStateCommunicationModel.swift in Sources */,
+				2CA7C4A41D6748AF0033C58B /* Imovel.swift in Sources */,
+				2CA7C4A21D6748930033C58B /* Wrappable.swift in Sources */,
 				2CA7C4611D6668060033C58B /* AppDelegate.swift in Sources */,
 				2CA7C4911D6668500033C58B /* RealStateTableViewController.swift in Sources */,
+				2CA7C49D1D6746640033C58B /* CommunicationModel.swift in Sources */,
 				2CA7C4951D6668E80033C58B /* RealStateTableTableViewCell.swift in Sources */,
 				2CA7C4991D6679A40033C58B /* UIColor+Extension.swift in Sources */,
+				2CA7C4A61D674BC60033C58B /* Foto.swift in Sources */,
+				2CA7C4A81D674CB40033C58B /* Estado.swift in Sources */,
+				2CA7C49F1D6746EE0033C58B /* Error.swift in Sources */,
+				2CA7C4AC1D6751BB0033C58B /* Imoveis.swift in Sources */,
+				2CA7C49B1D67462A0033C58B /* ConnectionSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

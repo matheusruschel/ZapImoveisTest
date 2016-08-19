@@ -57,6 +57,24 @@ class RealStateTableViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.appBlueColor()
         configureNavigationBar()
+        
+        let comModel = RealStateCommunicationModel()
+        comModel.fetchImoveis({
+            imoveisCallBack in
+            
+            do{
+                let imoveis = try  imoveisCallBack()
+                print(imoveis)
+            } catch let error {
+                print(error)
+            }
+
+
+
+            
+        
+        })
+        
     }
     
     // MARK: CONFIGURATIONS

@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "trash.png",
       "scale" : "1x"
     },
     {
