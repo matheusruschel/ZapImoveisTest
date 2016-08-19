@@ -30,4 +30,8 @@ extension UIColor {
         return UIColor(netHex:0x299EE0)
     }
     
+    static func appOrangeColor() -> UIColor {
+        return UIColor(netHex:0xFF5A00)
+    }
+    
 }

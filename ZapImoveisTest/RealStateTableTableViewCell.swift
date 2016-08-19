@@ -31,6 +31,8 @@ class RealStateTableTableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelExpirationDate: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

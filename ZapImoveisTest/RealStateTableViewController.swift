@@ -24,10 +24,7 @@ class RealStateTableViewController: UIViewController {
             configureToolBar()
         }
     }
-    
-    @IBOutlet weak var buttonMagnifier: UIBarButtonItem!
-    @IBOutlet weak var buttonCone: UIBarButtonItem!
-    @IBOutlet weak var segmenetedControl: UISegmentedControl!
+
     @IBOutlet weak var lowerToolBar: UIToolbar! {
         didSet {
             configureLowerToolBar()
@@ -44,9 +41,17 @@ class RealStateTableViewController: UIViewController {
             configureLabelNumberOfAnuncios()
         }
     }
-    
+    @IBOutlet weak var buttonMagnifier: UIBarButtonItem!
+    @IBOutlet weak var buttonCone: UIBarButtonItem!
+    @IBOutlet weak var segmenetedControl: UISegmentedControl!
     @IBOutlet weak var buttonOrdenar: UIBarButtonItem!
     @IBOutlet weak var buttonOrdenarMenu: UIBarButtonItem!
+    @IBOutlet weak var buttonCreateAnuncio: UIButton! {
+        didSet {
+            configureButtonCreateAnuncio()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +60,14 @@ class RealStateTableViewController: UIViewController {
     }
     
     // MARK: CONFIGURATIONS
+    
+    func configureButtonCreateAnuncio() {
+        self.buttonCreateAnuncio.backgroundColor = UIColor.appOrangeColor()
+        self.buttonCreateAnuncio.setTitle("CRIAR ANÚNCIO", forState: .Normal)
+        self.buttonCreateAnuncio.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.buttonCreateAnuncio.layer.cornerRadius = 5.0
+        self.buttonCreateAnuncio.clipsToBounds = true
+    }
     
     func configureLabelAtualizadoAInstantes() {
         labelAtualizadoAInstantes.textColor = UIColor.whiteColor()
