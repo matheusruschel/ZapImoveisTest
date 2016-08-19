@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2CA7C4611D6668060033C58B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4601D6668060033C58B /* AppDelegate.swift */; };
-		2CA7C4631D6668060033C58B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4621D6668060033C58B /* ViewController.swift */; };
 		2CA7C4661D6668060033C58B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7C4641D6668060033C58B /* Main.storyboard */; };
 		2CA7C4681D6668060033C58B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7C4671D6668060033C58B /* Assets.xcassets */; };
 		2CA7C46B1D6668060033C58B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7C4691D6668060033C58B /* LaunchScreen.storyboard */; };
 		2CA7C4761D6668070033C58B /* ZapImoveisTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4751D6668070033C58B /* ZapImoveisTestTests.swift */; };
 		2CA7C4811D6668070033C58B /* ZapImoveisTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4801D6668070033C58B /* ZapImoveisTestUITests.swift */; };
+		2CA7C4911D6668500033C58B /* RealStateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4901D6668500033C58B /* RealStateTableViewController.swift */; };
+		2CA7C4951D6668E80033C58B /* RealStateTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4931D6668E80033C58B /* RealStateTableTableViewCell.swift */; };
+		2CA7C4961D6668E80033C58B /* RealStateTableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7C4941D6668E80033C58B /* RealStateTableTableViewCell.xib */; };
+		2CA7C4991D6679A40033C58B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		2CA7C45D1D6668060033C58B /* ZapImoveisTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZapImoveisTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7C4601D6668060033C58B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CA7C4621D6668060033C58B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CA7C4651D6668060033C58B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CA7C4671D6668060033C58B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA7C46A1D6668060033C58B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		2CA7C47C1D6668070033C58B /* ZapImoveisTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZapImoveisTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7C4801D6668070033C58B /* ZapImoveisTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapImoveisTestUITests.swift; sourceTree = "<group>"; };
 		2CA7C4821D6668070033C58B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CA7C4901D6668500033C58B /* RealStateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealStateTableViewController.swift; sourceTree = "<group>"; };
+		2CA7C4931D6668E80033C58B /* RealStateTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealStateTableTableViewCell.swift; sourceTree = "<group>"; };
+		2CA7C4941D6668E80033C58B /* RealStateTableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealStateTableTableViewCell.xib; sourceTree = "<group>"; };
+		2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,11 @@
 		2CA7C45F1D6668060033C58B /* ZapImoveisTest */ = {
 			isa = PBXGroup;
 			children = (
+				2CA7C4971D6679950033C58B /* Util */,
+				2CA7C4921D6668C90033C58B /* Cells */,
+				2CA7C48F1D6668110033C58B /* ViewController */,
+				2CA7C48E1D66680C0033C58B /* Model */,
 				2CA7C4601D6668060033C58B /* AppDelegate.swift */,
-				2CA7C4621D6668060033C58B /* ViewController.swift */,
 				2CA7C4641D6668060033C58B /* Main.storyboard */,
 				2CA7C4671D6668060033C58B /* Assets.xcassets */,
 				2CA7C4691D6668060033C58B /* LaunchScreen.storyboard */,
@@ -123,6 +132,38 @@
 				2CA7C4821D6668070033C58B /* Info.plist */,
 			);
 			path = ZapImoveisTestUITests;
+			sourceTree = "<group>";
+		};
+		2CA7C48E1D66680C0033C58B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2CA7C48F1D6668110033C58B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7C4901D6668500033C58B /* RealStateTableViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		2CA7C4921D6668C90033C58B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7C4931D6668E80033C58B /* RealStateTableTableViewCell.swift */,
+				2CA7C4941D6668E80033C58B /* RealStateTableTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		2CA7C4971D6679950033C58B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA7C4961D6668E80033C58B /* RealStateTableTableViewCell.xib in Resources */,
 				2CA7C46B1D6668060033C58B /* LaunchScreen.storyboard in Resources */,
 				2CA7C4681D6668060033C58B /* Assets.xcassets in Resources */,
 				2CA7C4661D6668060033C58B /* Main.storyboard in Resources */,
@@ -256,8 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CA7C4631D6668060033C58B /* ViewController.swift in Sources */,
 				2CA7C4611D6668060033C58B /* AppDelegate.swift in Sources */,
+				2CA7C4911D6668500033C58B /* RealStateTableViewController.swift in Sources */,
+				2CA7C4951D6668E80033C58B /* RealStateTableTableViewCell.swift in Sources */,
+				2CA7C4991D6679A40033C58B /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
