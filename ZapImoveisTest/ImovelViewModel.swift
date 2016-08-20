@@ -29,6 +29,7 @@ class ImovelViewModel {
     var areaString:         String?
     var enderecoString:     String?
     var estadoString:       String?
+    var numFotos:           String?
     private var imovel:     Imovel? {
         didSet {
             fillTextsForImovel(imovel)
@@ -44,13 +45,13 @@ class ImovelViewModel {
         if let imovel = imovel {
             
             if let precoVenda = imovel.precoVenda {
-                precoVendaString = "R$ \(precoVenda)"
+                precoVendaString = "R$ \(precoVenda.stringFormatedWithSepator)"
             } else {
                 precoVendaString = nil
             }
             
             if let precoLocacao = imovel.precoLocacao {
-                precoLocacaoString = "R$ \(precoLocacao)"
+                precoLocacaoString = "R$ \(precoLocacao.stringFormatedWithSepator)"
             } else {
                 precoLocacaoString = nil
             }
@@ -60,6 +61,7 @@ class ImovelViewModel {
             dormitoriosString = String(imovel.numeroQuartos!)
             vagasString = String(imovel.numeroGaragens!)
             areaString = String(imovel.metrosQuadrados!)
+            numFotos = "1 de \(imovel.fotos!.count)"
             
             if let logradouro = imovel.endereco!.logradouro {
                 enderecoString = logradouro

@@ -97,14 +97,14 @@ class ImovelDetailViewController: UIViewController {
             labelPrecoLocacao.text = precoLocacaoString
         }
         
-        labelTipoImovel.text = imovelViewModel?.tipoString
-        labelQuartos.text = imovelViewModel?.dormitoriosString
-        labelBanheiro.text = imovelViewModel?.suitesString
-        labelCarro.text = imovelViewModel?.vagasString
-        labelMetrosQuadrados.text = imovelViewModel?.areaString
-        labelEndereco.text = imovelViewModel?.enderecoString
-        labelEstado.text = imovelViewModel?.estadoString
-        labelImagens.text = "1 de 20"
+        labelTipoImovel.text = imovelViewModel!.tipoString
+        labelQuartos.text = imovelViewModel!.dormitoriosString
+        labelBanheiro.text = imovelViewModel!.suitesString
+        labelCarro.text = imovelViewModel!.vagasString
+        labelMetrosQuadrados.text = "\(imovelViewModel!.areaString!)m2"
+        labelEndereco.text = imovelViewModel!.enderecoString
+        labelEstado.text = imovelViewModel!.estadoString
+        labelImagens.text = imovelViewModel!.numFotos
     }
     
     func clearContent() {

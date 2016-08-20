@@ -60,18 +60,31 @@ class RealStateTableTableViewCell: UITableViewCell {
         
         if let precoVenda = imovel.precoVenda {
             labelAVenda.text = "À VENDA"
-            labelAVendaPrice.text = "R$ \(precoVenda)"
+            labelAVendaPrice.text = "R$ \(precoVenda.stringFormatedWithSepator)"
         }
         
         if let precoAluguel = imovel.precoLocacao {
             labelLocacao.text = "LOCAÇÃO"
-            labelLocacaoPrice.text = "R$ \(precoAluguel)"
+            labelLocacaoPrice.text = "R$ \(precoAluguel.stringFormatedWithSepator)"
+        } else {
+            labelAVendaPrice.font = UIFont.systemFontOfSize(24)
         }
         
         labelNumber.text = "[\(imovel.codImovel!)]"
         labelName.text = "- \(imovel.tipoImovel!)"
         
-        labelStreet.text = "\(imovel.endereco!.logradouro!) - \(imovel.endereco!.bairro!)"
+        var streetText = ""
+        if let logradouro = imovel.endereco!.logradouro {
+            streetText = logradouro
+        }
+        
+        if let bairro = imovel.endereco!.bairro {
+            if streetText != "" && bairro != "" {
+                streetText = "\(streetText) - \(bairro)"
+            }
+        }
+        
+        labelStreet.text = streetText
         
         if let foto = imovel.getPreferredPhoto() {
             if let fotoURL = foto.imageURL {

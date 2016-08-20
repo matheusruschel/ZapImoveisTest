@@ -34,6 +34,7 @@
 		2CA7C4BC1D67E90E0033C58B /* ImovelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4BB1D67E90E0033C58B /* ImovelDetailViewController.swift */; };
 		2CA7C4BE1D689D200033C58B /* ImovelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4BD1D689D200033C58B /* ImovelViewModel.swift */; };
 		2CA7C4C01D68A1230033C58B /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4BF1D68A1230033C58B /* URLBuilder.swift */; };
+		2CF7F3E91D68FEE200F030D6 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7F3E81D68FEE200F030D6 /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		2CA7C4BB1D67E90E0033C58B /* ImovelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImovelDetailViewController.swift; sourceTree = "<group>"; };
 		2CA7C4BD1D689D200033C58B /* ImovelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImovelViewModel.swift; sourceTree = "<group>"; };
 		2CA7C4BF1D68A1230033C58B /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		2CF7F3E81D68FEE200F030D6 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA7C4981D6679A40033C58B /* UIColor+Extension.swift */,
+				2CF7F3E81D68FEE200F030D6 /* Number.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				2CA7C4B71D67B8680033C58B /* FotoDownloader.swift in Sources */,
 				2CA7C4991D6679A40033C58B /* UIColor+Extension.swift in Sources */,
 				2CA7C4A61D674BC60033C58B /* Foto.swift in Sources */,
+				2CF7F3E91D68FEE200F030D6 /* Number.swift in Sources */,
 				2CA7C4A81D674CB40033C58B /* Estado.swift in Sources */,
 				2CA7C4BE1D689D200033C58B /* ImovelViewModel.swift in Sources */,
 				2CA7C49F1D6746EE0033C58B /* Error.swift in Sources */,
