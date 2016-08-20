@@ -55,10 +55,10 @@ class CustomImageView : UIImageView {
         self.clipsToBounds = true
         let layer: CALayer = CALayer()
         layer.backgroundColor = UIColor.blackColor().CGColor
-        layer.position = CGPointMake(size.width / 2, size.height + size.height / 2 )
+        layer.position = CGPointMake(size.width / 2, size.height + size.height * 0.65 )
         layer.bounds = CGRectMake(0, 0, size.width, size.height)
         layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSizeMake(0.5, -size.height * 0.40)
+        layer.shadowOffset = CGSizeMake(0.5, -size.height * 0.55)
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 5.0
         lowerLayerShadow = layer

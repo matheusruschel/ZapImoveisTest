@@ -18,7 +18,10 @@ struct Imovel {
     var fotos:          [Foto]?
     var subTipoImovel:  String?
     var zapId:          String?
-    
+    var numeroQuartos:  Int?
+    var numeroGaragens: Int?
+    var metrosQuadrados:Int?
+    var banheiros:      Int?
     
     func getPreferredPhoto() -> Foto? {
         
@@ -47,7 +50,11 @@ extension Imovel : Wrappable {
             let precoLocacao = data["PrecoLocacao"],
             let fotosJSon = data["Fotos"] as? [AnyObject],
             let subTipoImovel = data["SubtipoImovel"] as? String,
-            let zapId = data["ZapID"] as? String else {
+            let zapId = data["ZapID"] as? String,
+            let numeroQuartos = data["Dormitorios"],
+            let banheiros = data["Suites"],
+            let numeroGaragens = data["Vagas"],
+            let metrosQuadrados = data["AreaTotal"] else {
                 return nil
         }
         
@@ -66,6 +73,8 @@ extension Imovel : Wrappable {
             return nil
         }
         
+        
+        
         self.init(codImovel:codImovel,
                   tipoImovel:tipoImovel,
                   endereco:endereco ,
@@ -73,7 +82,11 @@ extension Imovel : Wrappable {
                   precoLocacao:precoLocacao as? Int,
                   fotos:fotos,
                   subTipoImovel:subTipoImovel,
-                  zapId:zapId)
+                  zapId:zapId,
+                  numeroQuartos: numeroQuartos as? Int,
+                  numeroGaragens: numeroGaragens as? Int,
+                  metrosQuadrados: metrosQuadrados as? Int,
+                  banheiros:banheiros as? Int)
 
         
     }

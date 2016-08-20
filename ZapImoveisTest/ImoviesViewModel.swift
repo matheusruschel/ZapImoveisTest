@@ -46,7 +46,7 @@ class ImoveisViewModel {
                 let callBackStatus = try imoveisResponse()
                 
                 switch callBackStatus {
-                case .ResponseObject(_, let imoveis): self.imoveis = imoveis
+                case .ResponseObjectImoveis(_, let imoveis): self.imoveis = imoveis
                 }
                 
                 self.delegate?.didFinishLoadingImoveis(self, sucess: true, errorMsg: nil)

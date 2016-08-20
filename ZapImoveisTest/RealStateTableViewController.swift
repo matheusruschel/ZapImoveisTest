@@ -10,6 +10,7 @@ import UIKit
 
 let nibIdentifier = "RealStateTableTableViewCell"
 let cellIdentifier = "RealStateCell"
+let imovelDetailSegueIdentifier = "ImovelDetailSegue"
 
 class RealStateTableViewController: UIViewController {
     
@@ -61,10 +62,12 @@ class RealStateTableViewController: UIViewController {
         configureNavigationBar()
         configureRefreshControl()
         self.imoveisViewModel.delegate = self
+        loadImoveis()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.refreshControl.beginRefreshing()
     }
     
     func loadImoveis() {
@@ -128,6 +131,7 @@ class RealStateTableViewController: UIViewController {
         navigationBar.shadowImage = UIImage()
         navigationBar.tintColor = UIColor.whiteColor()
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
     }
 
@@ -136,22 +140,27 @@ class RealStateTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == imovelDetailSegueIdentifier {
+            
+            let cell = sender as! RealStateTableTableViewCell
+            let destVc = segue.destinationViewController as! ImovelDetailViewController
+            destVc.imovelViewModel = ImovelViewModel(imovelId: cell.imovel!.codImovel!)
+        }
     }
-    */
 
 }
 
 // MARK:  TABLE VIEW DELEGATE & DATA SOURCE
 
 extension RealStateTableViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        self.performSegueWithIdentifier(imovelDetailSegueIdentifier, sender: cell)
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -195,6 +204,8 @@ extension RealStateTableViewController : ImoveisViewModelDelegate {
                 self.realStateTableView.reloadData()
                 self.labelNumberOfAnuncios.text = imoveisViewModel.numberOfAnunciosText
                 self.labelAtualizadoAInstantes.text = imoveisViewModel.justUpdatedText
+            } else {
+                print(errorMsg!)
             }
         })
         

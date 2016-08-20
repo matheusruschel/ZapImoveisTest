@@ -31,6 +31,9 @@
 		2CA7C4B41D67A0870033C58B /* ImoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4B31D67A0870033C58B /* ImoviesViewModel.swift */; };
 		2CA7C4B71D67B8680033C58B /* FotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4B61D67B8680033C58B /* FotoDownloader.swift */; };
 		2CA7C4BA1D67E1480033C58B /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4B91D67E1480033C58B /* CustomImageView.swift */; };
+		2CA7C4BC1D67E90E0033C58B /* ImovelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4BB1D67E90E0033C58B /* ImovelDetailViewController.swift */; };
+		2CA7C4BE1D689D200033C58B /* ImovelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4BD1D689D200033C58B /* ImovelViewModel.swift */; };
+		2CA7C4C01D68A1230033C58B /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7C4BF1D68A1230033C58B /* URLBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		2CA7C4B31D67A0870033C58B /* ImoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoviesViewModel.swift; sourceTree = "<group>"; };
 		2CA7C4B61D67B8680033C58B /* FotoDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FotoDownloader.swift; sourceTree = "<group>"; };
 		2CA7C4B91D67E1480033C58B /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		2CA7C4BB1D67E90E0033C58B /* ImovelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImovelDetailViewController.swift; sourceTree = "<group>"; };
+		2CA7C4BD1D689D200033C58B /* ImovelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImovelViewModel.swift; sourceTree = "<group>"; };
+		2CA7C4BF1D68A1230033C58B /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA7C4901D6668500033C58B /* RealStateTableViewController.swift */,
+				2CA7C4BB1D67E90E0033C58B /* ImovelDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 				2CA7C4A91D674FE80033C58B /* RealStateCommunicationModel.swift */,
 				2CA7C49C1D6746640033C58B /* CommunicationModel.swift */,
 				2CA7C4B61D67B8680033C58B /* FotoDownloader.swift */,
+				2CA7C4BF1D68A1230033C58B /* URLBuilder.swift */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA7C4B31D67A0870033C58B /* ImoviesViewModel.swift */,
+				2CA7C4BD1D689D200033C58B /* ImovelViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -388,6 +397,8 @@
 				2CA7C4A21D6748930033C58B /* Wrappable.swift in Sources */,
 				2CA7C4611D6668060033C58B /* AppDelegate.swift in Sources */,
 				2CA7C4911D6668500033C58B /* RealStateTableViewController.swift in Sources */,
+				2CA7C4C01D68A1230033C58B /* URLBuilder.swift in Sources */,
+				2CA7C4BC1D67E90E0033C58B /* ImovelDetailViewController.swift in Sources */,
 				2CA7C49D1D6746640033C58B /* CommunicationModel.swift in Sources */,
 				2CA7C4951D6668E80033C58B /* RealStateTableTableViewCell.swift in Sources */,
 				2CA7C4B41D67A0870033C58B /* ImoviesViewModel.swift in Sources */,
@@ -395,6 +406,7 @@
 				2CA7C4991D6679A40033C58B /* UIColor+Extension.swift in Sources */,
 				2CA7C4A61D674BC60033C58B /* Foto.swift in Sources */,
 				2CA7C4A81D674CB40033C58B /* Estado.swift in Sources */,
+				2CA7C4BE1D689D200033C58B /* ImovelViewModel.swift in Sources */,
 				2CA7C49F1D6746EE0033C58B /* Error.swift in Sources */,
 				2CA7C4AC1D6751BB0033C58B /* Imoveis.swift in Sources */,
 				2CA7C49B1D67462A0033C58B /* ConnectionSettings.swift in Sources */,
@@ -622,6 +634,7 @@
 				2CA7C4871D6668070033C58B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2CA7C4881D6668070033C58B /* Build configuration list for PBXNativeTarget "ZapImoveisTestTests" */ = {
 			isa = XCConfigurationList;
@@ -630,6 +643,7 @@
 				2CA7C48A1D6668070033C58B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2CA7C48B1D6668070033C58B /* Build configuration list for PBXNativeTarget "ZapImoveisTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -638,6 +652,7 @@
 				2CA7C48D1D6668070033C58B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,3 +10,4 @@ import Foundation
 
 
 let URLJSON = "https://raw.githubusercontent.com/ccezar/sample-data/master/imoveis.json"
+let URLJSONBase = "https://raw.githubusercontent.com/ccezar/sample-data/master/"

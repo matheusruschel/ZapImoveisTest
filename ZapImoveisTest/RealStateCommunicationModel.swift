@@ -8,17 +8,24 @@
 
 import Foundation
 
-enum CallBackStatus {
-    case ResponseObject(status:ResponseStatus, imoveis:[Imovel])
+enum CallBackStatusImoveis {
+    case ResponseObjectImoveis(status:ResponseStatus, imoveis:[Imovel])
 }
 
-typealias RealStateCompletionBlock = (() throws -> CallBackStatus) -> Void
+enum CallBackStatusImovel {
+    case ResponseObjectImovel(imovel:Imovel)
+}
+
+
+
+typealias ImoveisCompletionBlock = (() throws -> CallBackStatusImoveis) -> Void
+typealias ImovelCompletionBlock = (() throws -> CallBackStatusImovel) -> Void
 
 class RealStateCommunicationModel {
     
     let api = CommunicationModel()
     
-    func fetchImoveis(completion:RealStateCompletionBlock) {
+    func fetchImoveis(completion:ImoveisCompletionBlock) {
         
         if let url = NSURL(string: URLJSON) {
             
@@ -31,7 +38,7 @@ class RealStateCommunicationModel {
                     
                     if let responseObject = ResponseObject(data: imoveisData) {
                         
-                        return .ResponseObject(
+                        return .ResponseObjectImoveis(
                             status: responseObject.responseStatus!,
                             imoveis:responseObject.imoveis!.imoveis!)
                         
@@ -51,6 +58,38 @@ class RealStateCommunicationModel {
         
         
     }
+    
+    func fetchImovel(forId imovelID:Int, completion:ImovelCompletionBlock) {
+        
+        if let url = URLBuilder.buildURLForImovelId(imovelID) {
+            
+            api.fetchDataOnline(url, completion: {
+                
+                data in
+                completion({
+                    
+                    let imoveisData = try data()
+                    let imovelData = imoveisData["Imovel"] as! [String:AnyObject]
+
+                    if let imovel = Imovel(data:imovelData) {
+                        return .ResponseObjectImovel(imovel: imovel)
+                        
+                    } else {
+                        throw Error.ErrorWithMsg(msg: "Error parsing Json file")
+                    }
+                    
+                })
+                
+                
+            })
+            
+        } else {
+            fatalError("Invalid URL provided")
+        }
+        
+        
+    }
+
     
 
 }
