@@ -13,15 +13,13 @@ struct Imoveis {
     
     var quantidadeResultados:Int?
     var imoveis: [Imovel]?
-    var status: ResponseStatus?
 }
 extension Imoveis: Wrappable {
     
     init?(data: AnyObject) {
         
         guard let quantidadeResultados = data["QuantidadeResultados"] as? Int,
-                  imoveisJson = data["Imoveis"] as? [AnyObject],
-                  statusJson = data["ResponseStatus"] else {
+                  imoveisJson = data["Imoveis"] as? [AnyObject] else {
                 return nil
         }
         
@@ -31,9 +29,6 @@ extension Imoveis: Wrappable {
         if imoveis == nil {
             return nil
         }
-        guard let status = ResponseStatus(data:statusJson!) else {
-            return nil
-        }
-        self.init(quantidadeResultados:quantidadeResultados,imoveis:imoveis,status:status)
+        self.init(quantidadeResultados:quantidadeResultados,imoveis:imoveis)
     }
 }

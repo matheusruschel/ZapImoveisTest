@@ -10,11 +10,16 @@ import Foundation
 
 struct Foto {
     
-    var urlImage:       String?
+    var urlImageString:       String?
     var principal:      Bool?
     var descricao:      String?
     var origem:         String?
     var codImobiliaria: Int?
+    
+    var imageURL:NSURL? {
+        
+        return NSURL(string: urlImageString!)
+    }
     
 }
 extension Foto: Wrappable {
@@ -30,6 +35,6 @@ extension Foto: Wrappable {
                 return nil
         }
         
-        self.init(urlImage:urlImage, principal:principal, descricao:descricao , origem:origem, codImobiliaria:codImobiliaria)
+        self.init(urlImageString:urlImage, principal:principal, descricao:descricao , origem:origem, codImobiliaria:codImobiliaria)
     }
 }

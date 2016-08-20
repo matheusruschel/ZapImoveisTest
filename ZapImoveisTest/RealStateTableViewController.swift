@@ -51,33 +51,34 @@ class RealStateTableViewController: UIViewController {
             configureButtonCreateAnuncio()
         }
     }
+    let imoveisViewModel = ImoveisViewModel()
+    var refreshControl:UIRefreshControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.appBlueColor()
         configureNavigationBar()
-        
-        let comModel = RealStateCommunicationModel()
-        comModel.fetchImoveis({
-            imoveisCallBack in
-            
-            do{
-                let imoveis = try  imoveisCallBack()
-                print(imoveis)
-            } catch let error {
-                print(error)
-            }
-
-
-
-            
-        
-        })
-        
+        configureRefreshControl()
+        self.imoveisViewModel.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func loadImoveis() {
+        imoveisViewModel.fetchImoveis()
     }
     
     // MARK: CONFIGURATIONS
+    
+    func configureRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.appBlueColor()
+        self.refreshControl.addTarget(self, action: #selector(loadImoveis), forControlEvents: .ValueChanged)
+        self.realStateTableView.addSubview(self.refreshControl)
+    }
     
     func configureButtonCreateAnuncio() {
         self.buttonCreateAnuncio.backgroundColor = UIColor.appOrangeColor()
@@ -89,10 +90,12 @@ class RealStateTableViewController: UIViewController {
     
     func configureLabelAtualizadoAInstantes() {
         labelAtualizadoAInstantes.textColor = UIColor.whiteColor()
+        labelAtualizadoAInstantes.text = ""
     }
     
     func configureLabelNumberOfAnuncios() {
         labelNumberOfAnuncios.textColor = UIColor.whiteColor()
+        labelNumberOfAnuncios.text = ""
     }
     
     func configureTableView() {
@@ -154,13 +157,15 @@ extension RealStateTableViewController : UITableViewDelegate, UITableViewDataSou
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RealStateTableTableViewCell
         
+        cell.imovel = imoveisViewModel.objectForIndexPath(indexPath)
         
         return cell
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        
+        return imoveisViewModel.numberOfRowsInSection
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -177,6 +182,21 @@ extension RealStateTableViewController : UIToolbarDelegate {
         } else {
             return .Bottom
         }
+        
+    }
+}
+extension RealStateTableViewController : ImoveisViewModelDelegate {
+    
+    func didFinishLoadingImoveis(imoveisViewModel: ImoveisViewModel, sucess: Bool, errorMsg: String?) {
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            if sucess {
+                self.refreshControl!.endRefreshing()
+                self.realStateTableView.reloadData()
+                self.labelNumberOfAnuncios.text = imoveisViewModel.numberOfAnunciosText
+                self.labelAtualizadoAInstantes.text = imoveisViewModel.justUpdatedText
+            }
+        })
         
     }
 }

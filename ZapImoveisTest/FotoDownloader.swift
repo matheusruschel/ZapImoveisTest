@@ -1,5 +1,5 @@
 //
-//  CommunicationModel.swift
+//  FotoDownloader.swift
 //  ZapImoveisTest
 //
 //  Created by Matheus Ruschel on 8/19/16.
@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
-typealias DataCallbackCompletionBlock =  (() throws -> AnyObject) -> Void
+typealias ImageCallbackCompletionBlock =  (() throws -> UIImage?) -> Void
 
-class CommunicationModel {
+class FotoDownloader {
     
     var session: NSURLSession!
     
@@ -20,14 +21,14 @@ class CommunicationModel {
         session = NSURLSession(configuration: sessionConfig)
     }
     
-    func fetchDataOnline(url: NSURL, completion:DataCallbackCompletionBlock) {
+    func fetchImage(url: NSURL, completion:ImageCallbackCompletionBlock) {
         
         let task = session.dataTaskWithURL(url) {
             (data, response, error) in
             
             if error == nil {
                 completion({
-                    return try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! [String:AnyObject]
+                    return UIImage(data: data!)
                 })
                 
             } else {
@@ -38,6 +39,5 @@ class CommunicationModel {
         task.resume()
     }
 
-    
     
 }

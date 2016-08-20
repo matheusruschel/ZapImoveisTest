@@ -8,7 +8,11 @@
 
 import Foundation
 
-typealias RealStateCompletionBlock = (() throws -> Imoveis) -> Void
+enum CallBackStatus {
+    case ResponseObject(status:ResponseStatus, imoveis:[Imovel])
+}
+
+typealias RealStateCompletionBlock = (() throws -> CallBackStatus) -> Void
 
 class RealStateCommunicationModel {
     
@@ -25,10 +29,13 @@ class RealStateCommunicationModel {
                     
                 let imoveisData = try data()
                     
-                let imoveisJson = imoveisData["Imoveis"]
-                    
-                    if let imoveis = Imoveis(data:imoveisJson!!) {
-                        return imoveis
+                    if let responseObject = ResponseObject(data: imoveisData) {
+                        
+                        return .ResponseObject(
+                            status: responseObject.responseStatus!,
+                            imoveis:responseObject.imoveis!.imoveis!)
+                        
+                        
                     } else {
                         throw Error.ErrorWithMsg(msg: "Error parsing Json file")
                     }

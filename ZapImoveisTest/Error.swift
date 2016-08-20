@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum ErrorCode: ErrorType {
-    case CanceledTask, JSONNotRecognizedError
-}
-
 enum Error : ErrorType {
-    case ErrorWithCode(errorCode:ErrorCode)
     case ErrorWithMsg(msg: String)
 }
